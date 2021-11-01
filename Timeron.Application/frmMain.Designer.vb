@@ -24,17 +24,18 @@ Partial Class frmMain
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.tsslDateTimeNow = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.tsslPlaceholder01 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.tsslConnectionStatus = New System.Windows.Forms.ToolStripStatusLabel()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TakeoverToProConToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CheckForUpdatesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsslDateTimeNow = New System.Windows.Forms.ToolStripStatusLabel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.TakeoverToProConToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsslPlaceholder01 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.tsslConnectionStatus = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -48,6 +49,24 @@ Partial Class frmMain
         Me.StatusStrip1.Size = New System.Drawing.Size(529, 22)
         Me.StatusStrip1.TabIndex = 0
         Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'tsslDateTimeNow
+        '
+        Me.tsslDateTimeNow.Name = "tsslDateTimeNow"
+        Me.tsslDateTimeNow.Size = New System.Drawing.Size(99, 17)
+        Me.tsslDateTimeNow.Text = "tsslDateTimeNow"
+        '
+        'tsslPlaceholder01
+        '
+        Me.tsslPlaceholder01.Name = "tsslPlaceholder01"
+        Me.tsslPlaceholder01.Size = New System.Drawing.Size(16, 17)
+        Me.tsslPlaceholder01.Text = " | "
+        '
+        'tsslConnectionStatus
+        '
+        Me.tsslConnectionStatus.Name = "tsslConnectionStatus"
+        Me.tsslConnectionStatus.Size = New System.Drawing.Size(118, 17)
+        Me.tsslConnectionStatus.Text = "tsslConnectionStatus"
         '
         'MenuStrip1
         '
@@ -71,6 +90,12 @@ Partial Class frmMain
         Me.EditToolStripMenuItem.Size = New System.Drawing.Size(39, 20)
         Me.EditToolStripMenuItem.Text = "Edit"
         '
+        'TakeoverToProConToolStripMenuItem
+        '
+        Me.TakeoverToProConToolStripMenuItem.Name = "TakeoverToProConToolStripMenuItem"
+        Me.TakeoverToProConToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
+        Me.TakeoverToProConToolStripMenuItem.Text = "Migrate to ProCon"
+        '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.CheckForUpdatesToolStripMenuItem})
@@ -81,20 +106,14 @@ Partial Class frmMain
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'CheckForUpdatesToolStripMenuItem
         '
         Me.CheckForUpdatesToolStripMenuItem.Name = "CheckForUpdatesToolStripMenuItem"
-        Me.CheckForUpdatesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CheckForUpdatesToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
         Me.CheckForUpdatesToolStripMenuItem.Text = "Check for Updates"
-        '
-        'tsslDateTimeNow
-        '
-        Me.tsslDateTimeNow.Name = "tsslDateTimeNow"
-        Me.tsslDateTimeNow.Size = New System.Drawing.Size(99, 17)
-        Me.tsslDateTimeNow.Text = "tsslDateTimeNow"
         '
         'DataGridView1
         '
@@ -104,29 +123,21 @@ Partial Class frmMain
         Me.DataGridView1.Size = New System.Drawing.Size(505, 219)
         Me.DataGridView1.TabIndex = 2
         '
-        'TakeoverToProConToolStripMenuItem
+        'Button1
         '
-        Me.TakeoverToProConToolStripMenuItem.Name = "TakeoverToProConToolStripMenuItem"
-        Me.TakeoverToProConToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.TakeoverToProConToolStripMenuItem.Text = "Migrate to ProCon"
-        '
-        'tsslPlaceholder01
-        '
-        Me.tsslPlaceholder01.Name = "tsslPlaceholder01"
-        Me.tsslPlaceholder01.Size = New System.Drawing.Size(16, 17)
-        Me.tsslPlaceholder01.Text = " | "
-        '
-        'tsslConnectionStatus
-        '
-        Me.tsslConnectionStatus.Name = "tsslConnectionStatus"
-        Me.tsslConnectionStatus.Size = New System.Drawing.Size(118, 17)
-        Me.tsslConnectionStatus.Text = "tsslConnectionStatus"
+        Me.Button1.Location = New System.Drawing.Point(183, 95)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 3
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(529, 271)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
@@ -156,4 +167,5 @@ Partial Class frmMain
     Friend WithEvents TakeoverToProConToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents tsslPlaceholder01 As ToolStripStatusLabel
     Friend WithEvents tsslConnectionStatus As ToolStripStatusLabel
+    Friend WithEvents Button1 As Button
 End Class

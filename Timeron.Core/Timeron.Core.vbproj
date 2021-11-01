@@ -12,6 +12,7 @@
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -55,11 +56,14 @@
     <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
+    <Import Include="Microsoft.Data.Sqlite" />
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="System" />
     <Import Include="System.Collections" />
     <Import Include="System.Collections.Generic" />
     <Import Include="System.Data" />
+    <Import Include="System.Data.Sql" />
+    <Import Include="System.Data.SqlClient" />
     <Import Include="System.Diagnostics" />
     <Import Include="System.Linq" />
     <Import Include="System.Xml.Linq" />
@@ -68,6 +72,7 @@
   <ItemGroup>
     <Compile Include="clsCore.vb" />
     <Compile Include="DL\Database\clsCheckConnection.vb" />
+    <Compile Include="DL\Database\clsConnectionHandler.vb" />
     <Compile Include="DL\Registry\Reader\clsHKCURegistryReader.vb" />
     <Compile Include="DL\Registry\Reader\clsHKLMRegistryReader.vb" />
     <Compile Include="DL\Registry\Writer\clsHKCURegistryWriter.vb" />
@@ -78,6 +83,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -113,6 +119,11 @@
     <Folder Include="BL\" />
     <Folder Include="DL\Eventhandling\Errorhandling\" />
     <Folder Include="DL\Eventhandling\Generals\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite">
+      <Version>5.0.11</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
